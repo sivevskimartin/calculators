@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="https://i.pinimg.com/474x/62/6d/7f/626d7f938aec8a55f77bbe69b8fb071b.jpg" type="image/icon type">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+  </head>
+  <body>
+    
+    <nav class="navbar navbar-expand-lg bg-primary">
+        <div class="container-fluid">
+          <a class="navbar-brand ms-5" href="#" style="cursor: default;">CALCULATOR</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+              <li class="nav-item dropdown nav-item" role="presentation">
+                <a class="nav-link dropdown-toggle" aria-current="page" href="#" id="fitnessDropdown" data-bs-toggle="tab">Financial</a>
+              </li>
+              <!--FITNESS DROPDOWN-->
+              <li class="nav-item dropdown nav-item" role="presentation">
+                <a class="nav-link dropdown-toggle" href="#" id="fitnessDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Fitness & Health
+                </a>
+                <ul class="dropdown-menu aria-labelledby="fitnessDropdownMenuLink" role="tablist">
+                  <li><a class="dropdown-item nav-item" id="bmi-tab" data-bs-toggle="tab" data-bs-target="#bmi" role="tab" aria-controls="bmi">BMI</a></li>
+                  <li><a class="dropdown-item nav-item" id="cricke-tab" data-bs-toggle="tab" data-bs-target="#circle" role="tab" aria-controls="circle">Circle</a></li>
+                  <li><a class="dropdown-item" href="#" onclick="activateSection('percentage')">Precentage</a></li>
+                </ul>
+              </li>
+
+              <!--MATH DROPDOWN-->
+              <li class="nav-item dropdown nav-item" role="presentation">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Math
+                </a>
+                
+                <ul class="dropdown-menu aria-labelledby="navbarDropdownMenuLink" id="myTab" role="tablist">
+                  <li><a class="dropdown-item nav-item" id="triangle-tab" data-bs-toggle="tab" data-bs-target="#triangle" role="tab" aria-controls="triangle">Triangle</a></li>
+                  <li><a class="dropdown-item nav-item" id="cricke-tab" data-bs-toggle="tab" data-bs-target="#circle" role="tab" aria-controls="circle">Circle</a></li>
+                  <li><a class="dropdown-item nav-item" id="precentage-tab" data-bs-toggle="tab" data-bs-target="#precentage" role="tab" aria-controls="precentage">Precentage</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      <div class="tab-content ms-5 mt-4" id="myTabContent">
+
+
+        <!--TRIANGLE-->
+        <div class="tab-pane fade" id="triangle" role="tabpanel" aria-labelledby="triangle-tab">
+          <div class="tr">
+            <h1><span>TRIANGLE CALCULATOR</span></h1>
+            <img src="images/triangle.jpg" class="triangleImg">
+
+            <input type="number" class="input1" placeholder="SIDE A" id="triangle1">
+            <input type="number" class="input2" placeholder="SIDE B" id="triangle2">
+            <input type="number" class="input3" placeholder="SIDE C" id="triangle3">
+            <input type="number" class="input4" placeholder="HEIGHT" id="triangle4">
+
+            <button type="button" class="btn btn-outline-success" onclick="triangle()" id="triangleButton">CALCULATE</button>
+            
+            <h4 class="trianglePreimeter">THE PERIMETER IS: <input type="number" id="triangleP" disabled class="triangleInput"></h4>
+            <h4 class="trianglePreimeter"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  THE AREA IS: <input type="number" id="triangleA" disabled class="triangleInput"></h4>
+          </div>
+        </div>
+
+
+
+        <!--CIRCLE-->
+        <div class="tab-pane fade" id="circle" role="tabpanel" aria-labelledby="circle-tab">
+          <div class="cr">
+            <h1><span>CIRCLE CALCULATOR</span></h1>
+            <img src="images/circle.jpg" class="circleImg">
+
+            <input type="number" class="radiusInput" placeholder="RADIUS" id="radius">
+
+            
+          </div>
+          <button type="button" class="btn btn-outline-success" onclick="circle()" id="circleButton">CALCULATE</button>
+          <h4 class="circlePreimeter">THE PERIMETER IS: <input type="number" id="circleP" disabled class="circleInput"></h4>
+            <h4 class="circlePreimeter"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  THE AREA IS: <input type="number" id="circleA" disabled class="circleInput"></h4>
+        </div>
+
+        <!--PRECENTAGE-->
+
+      <div class="tab-pane fade" id="precentage" role="tabpanel" aria-labelledby="precentage-tab">
+        <div class="pre">
+          <h1 style="margin-left: 30px;"><span>PRECENTAGE CALCULATOR</span></h1>
+          <div class="box">
+              <h5><input class="precentageInput1" type="number" placeholder="%" id="precenatageInput1"> &nbsp; of &nbsp; <input type="number" class="precentageInput2" id="precenatageInput2"> &nbsp; = &nbsp;<input type="number" class="precentageInputRes" disabled id="precentageRes"></h5>
+              <button type="button" class="btn btn-outline-success" id="precentageCalc" onclick="precentage()">CALCULATE</button>
+              <button type="button" class="btn btn-outline-secondary" onclick="precentageReset()" id="precentageReset">RESET</button>
+          </div>
+          <div class="box1">
+            <h5><input type="number" id="precentageMath1">
+              <select class="percentageSelect" id="percentageSelect">
+                <option selected id="precentageIncrease" value="increase">INCREASE</option>
+                <option value="1">DECREASE</option>
+              </select>
+              <input type="number" id="precentageMath2" placeholder="%"> = <input type="number" id="precentageMathRes" disabled>
+            </h5>
+            <button type="button" class="btn btn-outline-success" id="precentageMath" onclick="precentageMath()" value="">CALCULATE</button>
+              <button type="button" class="btn btn-outline-secondary" onclick="precentageMathReset()" id="precentageMathReset">RESET</button>
+          </div>
+        </div>
+    </div>
+
+    <!-- BMI -->
+
+
+    <!--  -->
+  </div>
+      
+      
+ 
+
+
+
+  </body>
+  <script src="js/script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+</html>

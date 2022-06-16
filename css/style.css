@@ -1,0 +1,177 @@
+@import url('https://fonts.googleapis.com/css?family=Titan+One');
+.collapse {
+    margin-right: 90px;
+}
+.triangleImg {
+    position: absolute;
+    width: 450px;
+}
+.input1 {
+    position: absolute;
+    margin: 200px 0 0 75px;
+    width: 90px;
+    
+}
+.input2 {
+    position: absolute;
+    margin: 200px 0 0 290px;
+    width: 90px;
+}
+.input3 {
+    position: absolute;
+    margin: 400px 0 0 180px;
+    width: 90px;
+}
+.input4 {
+    position: absolute;
+    margin: 270px 0 0 180px;
+    width: 90px;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.nav-link:hover {
+    background: rgb(0, 255, 0);
+    border-radius: 10px;
+}   
+
+#triangleButton {
+    margin: 450px 0 0 170px;
+}
+
+.trianglePreimeter {
+    margin: 15px 0 0 0;
+    font-family:'Titan One',cursive;
+}
+
+.triangleInput {
+    width: 150px;
+    border: 1px solid black;
+}
+
+.tr {
+    position: relative;
+}
+
+/* CIRCLE */
+
+.circleImg {
+    position: absolute;
+    width: 340px;
+    margin: 10px 0 0 30px;
+}
+.radiusInput {
+    position: absolute;
+    margin: 146px 0 0 230px;
+    width: 90px;
+}
+
+.cr {
+    position: relative;
+}
+
+#circleButton {
+    margin: 380px 0 0 140px;
+}
+
+.circlePreimeter {
+     margin: 25px 0 0 0;
+    font-family:'Titan One',cursive;
+}
+
+.circleInput {
+    width: 150px;
+    border: 1px solid black;
+}
+
+/* PRECENTAGE */
+
+.box {
+    margin: 50px 0 0 30px;
+    position: relative;
+    background-color: rgb(225, 225, 225);
+    width: 540px;
+    height: 150px;
+}
+
+.precentageInput1 {
+    margin: 40px 0 0 10px;
+    width: 140px;
+}
+
+.precentageInput2 {
+    width: 140px;
+}
+
+.precentageInputRes {
+    width: 140px;
+    border: 1px solid black;
+}
+
+#precentageCalc {
+    margin: 10px 0 0 150px;
+}
+
+#precentageReset {   
+    margin: 10px 0 0 10px;
+}
+
+.box1 {
+    margin: 60px 0 0 30px;
+    position: relative;
+    background-color: rgb(225, 225, 225);
+    width: 600px;
+    height: 160px;
+}
+
+#precentageMath1 {
+    margin: 35px 0 0 10px;
+    width: 140px;
+}
+#precentageMath2 {
+    margin: 20px 0 0 0px;
+    width: 140px;
+}
+#precentageMathRes {
+    margin: 20px 0 0 0px;
+    width: 140px;
+    border: 1px solid black;
+}
+#precentageMath {
+    margin: 10px 0 0 150px;
+}
+#precentageMathReset {
+    margin: 10px 0 0 10px;
+}
+/* ANIMATION */
+
+ h1{
+    background:#fff;
+    width:100%;
+    height:100%;
+    margin:0;
+    padding:0;
+    display:flex;
+    font-family:'Titan One',cursive;
+    font-size:90px;
+    font-weight:700;
+    flex-flow:row wrap;
+    align-content:center;
+    justify-content:center
+    }
+  
+  h1 span{width:100%;position:relative}
+  
+  h1 span:before{
+    background:linear-gradient(45deg,#1ce612,#6a82fb);
+    width:100%;
+    height:100%;
+    display:block;
+    position:absolute;
+    content:"";
+    mix-blend-mode:screen
+    }
