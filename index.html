@@ -27,7 +27,7 @@
                   Fitness & Health
                 </a>
                 <ul class="dropdown-menu aria-labelledby="fitnessDropdownMenuLink" role="tablist">
-                  <li><a class="dropdown-item nav-item" id="bmi-tab" data-bs-toggle="tab" data-bs-target="#bmi" role="tab" aria-controls="bmi">BMI</a></li>
+                  
                   <li><a class="dropdown-item nav-item" id="cricke-tab" data-bs-toggle="tab" data-bs-target="#circle" role="tab" aria-controls="circle">Circle</a></li>
                   <li><a class="dropdown-item" href="#" onclick="activateSection('percentage')">Precentage</a></li>
                 </ul>
@@ -43,6 +43,8 @@
                   <li><a class="dropdown-item nav-item" id="triangle-tab" data-bs-toggle="tab" data-bs-target="#triangle" role="tab" aria-controls="triangle">Triangle</a></li>
                   <li><a class="dropdown-item nav-item" id="cricke-tab" data-bs-toggle="tab" data-bs-target="#circle" role="tab" aria-controls="circle">Circle</a></li>
                   <li><a class="dropdown-item nav-item" id="precentage-tab" data-bs-toggle="tab" data-bs-target="#precentage" role="tab" aria-controls="precentage">Precentage</a></li>
+                  <li><a class="dropdown-item nav-item" id="bmi-tab" data-bs-toggle="tab" data-bs-target="#bmi" role="tab" aria-controls="bmi">Bmi</a></li>
+                  <li><a class="dropdown-item nav-item" id="bmr-tab" data-bs-toggle="tab" data-bs-target="#bmr" role="tab" aria-controls="bmi">Bmr</a></li>
                 </ul>
               </li>
             </ul>
@@ -113,7 +115,36 @@
     </div>
 
     <!-- BMI -->
+    <div class="tab-pane fade" id="bmi" role="tabpanel" aria-labelledby="bmi-tab">
+        <div class="bm">
+          <h1><span>BMI CALCULATOR</span></h1>
+          <div class="bmiBox">
+              <h5 class="bmiH5">Age &nbsp; <input type="number" name="" id="bmiInput1" name=""> &nbsp;ages 2 - 120</h4>
+              <h5 class="bmiH5">Gender &nbsp; <input type="radio" id="bmiRadio" name="fav_language" checked>Male &nbsp; <input type="radio" id="bmiRadio" name="fav_language">Female</h5>
+              <h5 class="bmiH5">Height &nbsp; <input type="number" id="bmiInput2" placeholder="cm"></h5>
+              <h5 class="bmiH5">Weight &nbsp; <input type="number" id="bmiInput3" placeholder="kg"></h5>
+              <button type="button" class="btn btn-outline-success" id="bmiCalculate" onclick="bmi()">CALCULATE</button>
+              <button type="button" class="btn btn-outline-secondary" id="bmiReset" onclick="bmiReset()">RESET</button>
+            </div>
+            <h2 class="bmiResult" style="display: none;" id="bmiResult">Result: <label id="bmiLab"></label>&nbsp; &nbsp;<label id="bmiLab2"></label></h2>
+        </div>
+    </div>
 
+    <!-- BMR -->
+    <div class="tab-pane fade" id="bmr" role="tabpanel" aria-labelledby="bmr-tab">
+      <div class="bmr">
+        <h1><span>BMR CALCULATOR</span></h1>
+        <div class="bmrBox">
+          <h5 class="bmrH5">Age &nbsp; <input type="number" name="" id="bmrInput1" name=""> &nbsp;ages 15 - 80</h4>
+          <h5 class="bmrH5">Gender &nbsp; <input type="radio" id="bmrRadio" name="fav_language" checked>Male &nbsp; <input type="radio" id="bmrRadio" name="fav_language">Female</h5>
+          <h5 class="bmrH5">Height &nbsp; <input type="number" id="bmrInput2" placeholder="cm"></h5>
+          <h5 class="bmrH5">Weight &nbsp; <input type="number" id="bmrInput3" placeholder="kg"></h5>
+          <button type="button" class="btn btn-outline-success" id="bmrCalculate" onclick="bmr()">CALCULATE</button>
+          <button type="button" class="btn btn-outline-secondary" id="bmrReset" onclick="bmrReset()">RESET</button>
+        </div>
+      </div>
+      
+    </div>
 
     <!--  -->
   </div>

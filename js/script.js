@@ -47,3 +47,31 @@ function precentageMathReset() {
     document.getElementById('precentageMath2').value = "";
     document.getElementById('precentageMathRes').value = "";
 }
+
+function bmi() {
+    var a = document.getElementById('bmiInput2').value / 100;
+    var b = document.getElementById('bmiInput3').value;
+    var result = ((parseFloat(b) / Math.pow(parseFloat(a), 2))).toFixed(2);
+    document.getElementById('bmiLab').innerHTML = result;
+    document.getElementById('bmiResult').style.display = "block";
+    if(result<18.5) {
+        document.getElementById('bmiLab2').innerHTML = "Underweight";
+    }
+    else if(result>=18.5 && result<=24.9) {
+        document.getElementById('bmiLab2').innerHTML = "Healthy";
+    }
+    else if(result>=25 && result<=29.9) {
+        document.getElementById('bmiLab2').innerHTML = "Overweight";
+    }
+    else {
+        document.getElementById('bmiLab2').innerHTML = "Overweight";
+    }
+
+}
+
+function bmiReset() {
+    document.getElementById('bmiInput1').value = "";
+    document.getElementById('bmiInput2').value = "";
+    document.getElementById('bmiInput3').value = "";
+    document.getElementById('bmiResult').style.display = "none";
+}

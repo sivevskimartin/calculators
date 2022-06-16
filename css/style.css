@@ -38,7 +38,9 @@ input::-webkit-inner-spin-button {
     background: rgb(0, 255, 0);
     border-radius: 10px;
 }   
-
+.nav-link {
+    border-radius: 10px;
+} 
 #triangleButton {
     margin: 450px 0 0 170px;
 }
@@ -147,6 +149,115 @@ input::-webkit-inner-spin-button {
 #precentageMathReset {
     margin: 10px 0 0 10px;
 }
+
+/* BMI */
+
+.bmiBox {
+    margin: 60px 0 0 0;
+    position: relative;
+    width: 360px;
+    height: 250px;
+    background-color: rgb(225, 225, 225);
+}
+.bmiH5 {
+    margin: 0 0 0 15px;
+}
+
+#bmiRadio {
+    margin-top: 15px;
+    height: 16px;
+    width: 23px;
+}
+
+#bmiInput1 {
+    margin: 15px 0 0 0px;
+    width: 160px;
+}
+
+#bmiInput2 {
+    margin: 15px 0 0 0px;
+    width: 160px;
+}
+
+#bmiInput3 {
+    margin: 20px 0 0 0px;
+    width: 160px;
+}
+
+#bmiCalculate {
+    margin: 20px 0 0 60px;
+}
+
+#bmiReset {
+    margin: 20px 0 0 10px;
+}
+
+.bmiResult {
+    margin: 30px 0 0 0;
+    background-color: #51ff48;
+    width: 510px;
+    padding: 10px;
+    font-family:'Titan One',cursive;
+}
+
+#bmiLab2 {
+    color: red;
+}
+
+/* BMR */
+
+.bmrBox {
+    margin: 60px 0 0 0;
+    position: relative;
+    width: 360px;
+    height: 250px;
+    background-color: rgb(225, 225, 225);
+}
+.bmrH5 {
+    margin: 0 0 0 15px;
+}
+
+#bmrRadio {
+    margin-top: 15px;
+    height: 16px;
+    width: 23px;
+}
+
+#bmrInput1 {
+    margin: 15px 0 0 0px;
+    width: 160px;
+}
+
+#bmrInput2 {
+    margin: 15px 0 0 0px;
+    width: 160px;
+}
+
+#bmrInput3 {
+    margin: 20px 0 0 0px;
+    width: 160px;
+}
+
+#bmrCalculate {
+    margin: 20px 0 0 60px;
+}
+
+#bmrReset {
+    margin: 20px 0 0 10px;
+}
+
+.bmrResult {
+    margin: 30px 0 0 0;
+    background-color: #51ff48;
+    width: 510px;
+    padding: 10px;
+    font-family:'Titan One',cursive;
+}
+
+#bmrLab2 {
+    color: red;
+}
+
 /* ANIMATION */
 
  h1{
