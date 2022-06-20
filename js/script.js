@@ -49,8 +49,8 @@ function precentageMathReset() {
 }
 
 function bmi() {
-    var a = document.getElementById('bmiInput2').value / 100;
-    var b = document.getElementById('bmiInput3').value;
+    var a = document.getElementById('bmiHeight').value / 100;
+    var b = document.getElementById('bmiWeight').value;
     var result = ((parseFloat(b) / Math.pow(parseFloat(a), 2))).toFixed(2);
     document.getElementById('bmiLab').innerHTML = result;
     document.getElementById('bmiResult').style.display = "block";
@@ -70,8 +70,97 @@ function bmi() {
 }
 
 function bmiReset() {
-    document.getElementById('bmiInput1').value = "";
-    document.getElementById('bmiInput2').value = "";
-    document.getElementById('bmiInput3').value = "";
+    document.getElementById('bmiHeight').value = "";
+    document.getElementById('bmiWeight').value = "";
     document.getElementById('bmiResult').style.display = "none";
+}
+
+function bmr() {
+    var ages = document.getElementById('bmrAges').value;
+    var weight = document.getElementById('bmrWeight').value;
+    var height = document.getElementById('bmrHeight').value;
+    var res; 
+    if(document.getElementById('bmrRadio1').checked) {
+        res = (10*weight)+(6.25*height)-(5*ages)+5;
+        document.getElementById('bmrLab').innerHTML = res;
+        document.getElementById('bmrResult').style.display="block";
+    }   
+    else {
+        res = (10*weight)+(6.25*height)-(5*ages)-161;
+        document.getElementById('bmrLab').innerHTML = res;
+        document.getElementById('bmrResult').style.display="block";
+    }
+}
+
+function bmrReset() {
+    document.getElementById('bmrAges').value = "";
+    document.getElementById('bmrWeight').value = "";
+    document.getElementById('bmrHeight').value = "";
+    document.getElementById('bmrResult').style.display = "none";
+}
+
+function ideal() {
+    var height = document.getElementById('idealHeight').value;
+    var idealResult;
+    if(document.getElementById('idealRadio1').checked) {
+        idealResult = (50 + (0.91*(height-152.4))).toFixed(1);
+        if(idealResult<0) {
+            document.getElementById('idealLab').innerHTML = 0;
+        document.getElementById('idealResult').style.display="block";
+        }
+        else {
+        document.getElementById('idealLab').innerHTML = idealResult;
+        document.getElementById('idealResult').style.display="block"; 
+        }
+    }
+    else {
+        idealResult = (45.5 + (0.91*(height-152.4))).toFixed(1);
+        if(idealResult<0) {
+            document.getElementById('idealLab').innerHTML = 0;
+        document.getElementById('idealResult').style.display="block";
+        }
+        else {
+        document.getElementById('idealLab').innerHTML = idealResult;
+        document.getElementById('idealResult').style.display="block"; 
+        }
+    }
+}
+
+function idealReset() {
+    document.getElementById('idealHeight').value = "";
+    document.getElementById('idealAges').value = "";
+    document.getElementById('idealResult').style.display = "none";
+}
+
+function bodyFatRadio() {
+    document.getElementById('bodyFatHipRow').style.display = "block";
+    document.getElementById('bodyFatHip').style.display = "block";
+}
+
+function bodyFatRadio1() {
+    document.getElementById('bodyFatHipRow').style.display = "none";
+    document.getElementById('bodyFatHip').style.display = "none";
+}
+
+function bodyFat() {
+    var age = document.getElementById('bodyFatAges').value;
+    var weight = document.getElementById('bodyFatWeight').value;
+    var height = document.getElementById('bodyFatHeight').value;
+    var res;
+    if(document.getElementById('bodyFatRadio1').checked)
+    {
+        res = (1.20*(((parseFloat(weight) / Math.pow(parseFloat(height), 2))).toFixed(2)))+(0.23*age)-16.2;
+        document.getElementById('bodyFatLab').innerHTML = res;
+        document.getElementById('bodyFatResult').style.display="block";
+    }
+}
+
+function bodyFatReset() {
+    document.getElementById('bodyFatAges').value = "";
+    document.getElementById('bodyFatWeight').value = "";
+    document.getElementById('bodyFatHeight').value = "";
+    document.getElementById('bodyFatNeck').value = "";
+    document.getElementById('bodyFatWaist').value = "";
+    document.getElementById('bodyFatHip').value = "";
+    document.getElementById('bodyFatResult').style.display = "none";
 }

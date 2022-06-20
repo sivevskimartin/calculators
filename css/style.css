@@ -1,261 +1,47 @@
 @import url('https://fonts.googleapis.com/css?family=Titan+One');
-.collapse {
-    margin-right: 90px;
-}
-.triangleImg {
-    position: absolute;
-    width: 450px;
-}
-.input1 {
-    position: absolute;
-    margin: 200px 0 0 75px;
-    width: 90px;
-    
-}
-.input2 {
-    position: absolute;
-    margin: 200px 0 0 290px;
-    width: 90px;
-}
-.input3 {
-    position: absolute;
-    margin: 400px 0 0 180px;
-    width: 90px;
-}
-.input4 {
-    position: absolute;
-    margin: 270px 0 0 180px;
-    width: 90px;
-}
 
+/* REMOVE ARROWS */
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.nav-link {
+  border-radius: 15px;
 }
 
 .nav-link:hover {
-    background: rgb(0, 255, 0);
-    border-radius: 10px;
-}   
-.nav-link {
-    border-radius: 10px;
-} 
-#triangleButton {
-    margin: 450px 0 0 170px;
+  background-color: #1ce612;
 }
 
-.trianglePreimeter {
-    margin: 15px 0 0 0;
-    font-family:'Titan One',cursive;
+.collapse {
+    margin-right: 90px;
+}
+.side-a{
+    left: 2%;
+    top: 50%;
+    width: 100px!important;
 }
 
-.triangleInput {
-    width: 150px;
-    border: 1px solid black;
+/* FONT FAMILY */
+.font-titan {
+  font-family:'Titan One',cursive;
 }
 
-.tr {
-    position: relative;
+
+/* BACKGROUND */
+
+.bg-light-grey {
+  background-color: #e1e1e1;
 }
 
-/* CIRCLE */
-
-.circleImg {
-    position: absolute;
-    width: 340px;
-    margin: 10px 0 0 30px;
-}
-.radiusInput {
-    position: absolute;
-    margin: 146px 0 0 230px;
-    width: 90px;
+.bg-green {
+  background-color: #5cff54;
 }
 
-.cr {
-    position: relative;
-}
-
-#circleButton {
-    margin: 380px 0 0 140px;
-}
-
-.circlePreimeter {
-     margin: 25px 0 0 0;
-    font-family:'Titan One',cursive;
-}
-
-.circleInput {
-    width: 150px;
-    border: 1px solid black;
-}
-
-/* PRECENTAGE */
-
-.box {
-    margin: 50px 0 0 30px;
-    position: relative;
-    background-color: rgb(225, 225, 225);
-    width: 540px;
-    height: 150px;
-}
-
-.precentageInput1 {
-    margin: 40px 0 0 10px;
-    width: 140px;
-}
-
-.precentageInput2 {
-    width: 140px;
-}
-
-.precentageInputRes {
-    width: 140px;
-    border: 1px solid black;
-}
-
-#precentageCalc {
-    margin: 10px 0 0 150px;
-}
-
-#precentageReset {   
-    margin: 10px 0 0 10px;
-}
-
-.box1 {
-    margin: 60px 0 0 30px;
-    position: relative;
-    background-color: rgb(225, 225, 225);
-    width: 600px;
-    height: 160px;
-}
-
-#precentageMath1 {
-    margin: 35px 0 0 10px;
-    width: 140px;
-}
-#precentageMath2 {
-    margin: 20px 0 0 0px;
-    width: 140px;
-}
-#precentageMathRes {
-    margin: 20px 0 0 0px;
-    width: 140px;
-    border: 1px solid black;
-}
-#precentageMath {
-    margin: 10px 0 0 150px;
-}
-#precentageMathReset {
-    margin: 10px 0 0 10px;
-}
-
-/* BMI */
-
-.bmiBox {
-    margin: 60px 0 0 0;
-    position: relative;
-    width: 360px;
-    height: 250px;
-    background-color: rgb(225, 225, 225);
-}
-.bmiH5 {
-    margin: 0 0 0 15px;
-}
-
-#bmiRadio {
-    margin-top: 15px;
-    height: 16px;
-    width: 23px;
-}
-
-#bmiInput1 {
-    margin: 15px 0 0 0px;
-    width: 160px;
-}
-
-#bmiInput2 {
-    margin: 15px 0 0 0px;
-    width: 160px;
-}
-
-#bmiInput3 {
-    margin: 20px 0 0 0px;
-    width: 160px;
-}
-
-#bmiCalculate {
-    margin: 20px 0 0 60px;
-}
-
-#bmiReset {
-    margin: 20px 0 0 10px;
-}
-
-.bmiResult {
-    margin: 30px 0 0 0;
-    background-color: #51ff48;
-    width: 510px;
-    padding: 10px;
-    font-family:'Titan One',cursive;
-}
-
-#bmiLab2 {
-    color: red;
-}
-
-/* BMR */
-
-.bmrBox {
-    margin: 60px 0 0 0;
-    position: relative;
-    width: 360px;
-    height: 250px;
-    background-color: rgb(225, 225, 225);
-}
-.bmrH5 {
-    margin: 0 0 0 15px;
-}
-
-#bmrRadio {
-    margin-top: 15px;
-    height: 16px;
-    width: 23px;
-}
-
-#bmrInput1 {
-    margin: 15px 0 0 0px;
-    width: 160px;
-}
-
-#bmrInput2 {
-    margin: 15px 0 0 0px;
-    width: 160px;
-}
-
-#bmrInput3 {
-    margin: 20px 0 0 0px;
-    width: 160px;
-}
-
-#bmrCalculate {
-    margin: 20px 0 0 60px;
-}
-
-#bmrReset {
-    margin: 20px 0 0 10px;
-}
-
-.bmrResult {
-    margin: 30px 0 0 0;
-    background-color: #51ff48;
-    width: 510px;
-    padding: 10px;
-    font-family:'Titan One',cursive;
-}
-
-#bmrLab2 {
-    color: red;
+.color-red {
+  color: red;
 }
 
 /* ANIMATION */
@@ -273,7 +59,7 @@ input::-webkit-inner-spin-button {
     flex-flow:row wrap;
     align-content:center;
     justify-content:center
-    }
+}
   
   h1 span{width:100%;position:relative}
   
@@ -285,4 +71,4 @@ input::-webkit-inner-spin-button {
     position:absolute;
     content:"";
     mix-blend-mode:screen
-    }
+}

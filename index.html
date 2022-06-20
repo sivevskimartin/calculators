@@ -18,9 +18,19 @@
           </button>
           <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
             <ul class="navbar-nav" role="tablist">
-              <li class="nav-item dropdown nav-item" role="presentation">
-                <a class="nav-link dropdown-toggle" aria-current="page" href="#" id="fitnessDropdown" data-bs-toggle="tab">Financial</a>
+
+               <!-- FINANCIAL CALCULATOR -->
+
+               <li class="nav-item dropdown nav-item" role="presentation">
+                <a class="nav-link dropdown-toggle" href="#" id="financialDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Financial
+                </a>
+                <ul class="dropdown-menu aria-labelledby="financialDropdownMenuLink>
+                  <li><a class="dropdown-item nav-item" id="rent-tab" data-bs-toggle="tab" data-bs-target="#rent" role="tab" aria-controls="rent">Rent</a></li>
+                  <li><a class="dropdown-item nav-item" id="lease-tab" data-bs-toggle="tab" data-bs-target="#lease" role="tab" aria-controls="lease">Auto Lease</a></li>
+                </ul>
               </li>
+
               <!--FITNESS DROPDOWN-->
               <li class="nav-item dropdown nav-item" role="presentation">
                 <a class="nav-link dropdown-toggle" href="#" id="fitnessDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -28,8 +38,9 @@
                 </a>
                 <ul class="dropdown-menu aria-labelledby="fitnessDropdownMenuLink>
                   <li><a class="dropdown-item nav-item" id="bmi-tab" data-bs-toggle="tab" data-bs-target="#bmi" role="tab" aria-controls="bmi">Bmi</a></li>
-                  <li><a class="dropdown-item nav-item" id="bmr-tab" data-bs-toggle="tab" data-bs-target="#bmr" role="tab" aria-controls="bmi">Bmr</a></li>
-                  <li><a class="dropdown-item" href="#" onclick="activateSection('percentage')">Precentage</a></li>
+                  <li><a class="dropdown-item nav-item" id="bmr-tab" data-bs-toggle="tab" data-bs-target="#bmr" role="tab" aria-controls="bmr">Bmr</a></li>
+                  <li><a class="dropdown-item nav-item" id="idealWeight-tab" data-bs-toggle="tab" data-bs-target="#idealWeight" role="tab" aria-controls="idealWeight">Ideal Weight</a></li>
+                  <li><a class="dropdown-item nav-item" id="bodyFat-tab" data-bs-toggle="tab" data-bs-target="#bodyFat" role="tab" aria-controls="bodyFat">Body Fat</a></li>
                 </ul>
               </li>
 
@@ -49,7 +60,7 @@
           </div>
         </div>
       </nav>
-
+      <div class="container-fluid">
       <div class="tab-content ms-5 mt-4" id="myTabContent">
 
 
@@ -57,17 +68,22 @@
         <div class="tab-pane fade" id="triangle" role="tabpanel" aria-labelledby="triangle-tab">
           <div class="tr">
             <h1><span>TRIANGLE CALCULATOR</span></h1>
-            <img src="images/triangle.jpg" class="triangleImg">
-
-            <input type="number" class="input1" placeholder="SIDE A" id="triangle1">
-            <input type="number" class="input2" placeholder="SIDE B" id="triangle2">
-            <input type="number" class="input3" placeholder="SIDE C" id="triangle3">
-            <input type="number" class="input4" placeholder="HEIGHT" id="triangle4">
-
+            <div class="holder position-relative mt-4">
+            <img src="images/triangle.jpg" class="img-fluid w-25">
+        <form action="">
+            <input type="number" class="side-a form-control position-absolute" placeholder="SIDE A" id="triangle1">
+            <input type="number" class="side-b form-control position-absolute" placeholder="SIDE B" id="triangle2">
+            <input type="number" class="side-c form-control position-absolute" placeholder="SIDE C" id="triangle3">
+            <input type="number" class="input4 form-control position-absolute" placeholder="HEIGHT" id="triangle4">
+          </div>
             <button type="button" class="btn btn-outline-success" onclick="triangle()" id="triangleButton">CALCULATE</button>
             
-            <h4 class="trianglePreimeter">THE PERIMETER IS: <input type="number" id="triangleP" disabled class="triangleInput"></h4>
-            <h4 class="trianglePreimeter"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  THE AREA IS: <input type="number" id="triangleA" disabled class="triangleInput"></h4>
+            <div class="mb-3">
+              <label for="agesTriangle" class="form-label">Ages</label>
+              <input type="number" class="form-control" id="agesTriangle">
+            </div>
+            <h4 class="trianglePreimeter">THE AREA IS: <input type="number" id="triangleA" disabled class="triangleInput"></h4>
+        </form>
           </div>
         </div>
 
@@ -91,64 +107,354 @@
         <!--PRECENTAGE-->
 
       <div class="tab-pane fade" id="precentage" role="tabpanel" aria-labelledby="precentage-tab">
-        <div class="pre">
-          <h1 style="margin-left: 30px;"><span>PRECENTAGE CALCULATOR</span></h1>
-          <div class="box">
-              <h5><input class="precentageInput1" type="number" placeholder="%" id="precenatageInput1"> &nbsp; of &nbsp; <input type="number" class="precentageInput2" id="precenatageInput2"> &nbsp; = &nbsp;<input type="number" class="precentageInputRes" disabled id="precentageRes"></h5>
-              <button type="button" class="btn btn-outline-success" id="precentageCalc" onclick="precentage()">CALCULATE</button>
-              <button type="button" class="btn btn-outline-secondary" onclick="precentageReset()" id="precentageReset">RESET</button>
+        <div class="row">
+          <h1><span>PERCENTAGE CALCULATOR</span></h1>
+        </div>
+        <div class="percetageBox bg-light-grey p-3 mt-4 col-7">
+        <div class="row">
+          <div class="col-auto mt-auto">
+            <input type="number" class="form-control" id="precenatageInput1" placeholder="%">
           </div>
-          <div class="box1">
-            <h5><input type="number" id="precentageMath1">
-              <select class="percentageSelect" id="percentageSelect">
-                <option selected id="precentageIncrease" value="increase">INCREASE</option>
-                <option value="1">DECREASE</option>
-              </select>
-              <input type="number" id="precentageMath2" placeholder="%"> = <input type="number" id="precentageMathRes" disabled>
-            </h5>
-            <button type="button" class="btn btn-outline-success" id="precentageMath" onclick="precentageMath()" value="">CALCULATE</button>
-              <button type="button" class="btn btn-outline-secondary" onclick="precentageMathReset()" id="precentageMathReset">RESET</button>
+          <div class="col-auto mt-auto">
+            <h3>of</h3>
+          </div>
+          <div class="col-auto mt-auto">
+            <input type="number" class="form-control" id="precenatageInput2">
+          </div>
+          <div class="col-auto mt-auto">
+            <h3>=</h3>
+          </div>
+          <div class="col-auto mt-auto">
+            <input type="number" class="form-control" id="precentageRes" disabled>
           </div>
         </div>
+        <div class="row mt-3 d-flex justify-content-center">
+          <div class="col-auto">
+            <button type="button" class="btn btn-outline-success mt-2" onclick="precentage()">CALCULATE</button>
+          </div>
+          <div class="col-auto">
+            <button type="button" class="btn btn-outline-secondary mt-2" onclick="precentageReset()">RESET</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="percentageMathBox bg-light-grey mt-5 p-3 col-8">
+        <div class="row">
+          <div class="col-auto mt-2">
+            <input type="number" class="form-control" id="precentageMath1">
+          </div>
+          <div class="col-auto mt-1">
+            <select class="form-select form-select-lg mb-3" id="percentageSelect">
+              <option selected value="increase">INCREASE</option>
+              <option value="1">DECREASE</option>
+            </select>
+          </div>
+          <div class="col-auto mt-2">
+            <input type="number" class="form-control" id="precentageMath2">
+          </div>
+          <div class="col-auto mt-2">
+            <h3>=</h3>
+          </div>
+          <div class="col-auto mt-2">
+            <input type="number" class="form-control" id="precentageMathRes" disabled>
+          </div>
+        </div>
+        <div class="row d-flex justify-content-center">
+          <div class="col-auto">
+            <button type="button" class="btn btn-outline-success mt-2" onclick="precentageMath()">CALCULATE</button>
+          </div>
+          <div class="col-auto">
+            <button type="button" class="btn btn-outline-secondary mt-2" onclick="precentageMathReset()">RESET</button>
+          </div>
+        </div>
+      </div>
     </div>
 
     <!-- BMI -->
     <div class="tab-pane fade" id="bmi" role="tabpanel" aria-labelledby="bmi-tab">
-        <div class="bm">
-          <h1><span>BMI CALCULATOR</span></h1>
-          <div class="bmiBox">
-              <h5 class="bmiH5">Age &nbsp; <input type="number" name="" id="bmiInput1" name=""> &nbsp;ages 2 - 120</h4>
-              <h5 class="bmiH5">Gender &nbsp; <input type="radio" id="bmiRadio" name="fav_language" checked>Male &nbsp; <input type="radio" id="bmiRadio" name="fav_language">Female</h5>
-              <h5 class="bmiH5">Height &nbsp; <input type="number" id="bmiInput2" placeholder="cm"></h5>
-              <h5 class="bmiH5">Weight &nbsp; <input type="number" id="bmiInput3" placeholder="kg"></h5>
-              <button type="button" class="btn btn-outline-success" id="bmiCalculate" onclick="bmi()">CALCULATE</button>
-              <button type="button" class="btn btn-outline-secondary" id="bmiReset" onclick="bmiReset()">RESET</button>
+      <div class="row">
+        <h1><span>BMI CALCULATOR</span></h1>
+      </div>
+        <div class="bmiBox bg-light-grey mt-4 p-3 col-3">
+          <div class="row">
+            <div class="col-auto">
+              <label for="bmiAges" class="col-form-label">Ages:</label>
             </div>
-            <h2 class="bmiResult" style="display: none;" id="bmiResult">Result: <label id="bmiLab"></label>&nbsp; &nbsp;<label id="bmiLab2"></label></h2>
+            <div class="col-auto">
+              <input type="number" id="bmiAges" class="form-control" aria-describedby="passwordHelpInline">
+            </div>
+          </div>
+          <div class="row mt-3">
+            <div class="col-auto">
+              <label class="col-form-label">Gender:</label>
+            </div>
+            <div class="col-auto mt-2">
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="bmiRadio" id="bmiRadio1" value="option1" checked>
+                <label class="form-check-label" for="inlineRadio1">Male</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="bmiRadio" id="bmiRadio2" value="option2">
+                <label class="form-check-label" for="inlineRadio2">Female</label>
+              </div>
+            </div>
+          </div>
+          <div class="row mt-3">
+            <div class="col-auto">
+              <label for="bmiHeight" class="col-form-label">Height:</label>
+            </div>
+            <div class="col-auto">
+              <input type="number" id="bmiHeight" class="form-control" placeholder="cm">
+            </div>
+          </div>
+          <div class="row mt-3">
+            <div class="col-auto">
+              <label for="bmiWeight" class="col-form-label">Weight:</label>
+            </div>
+            <div class="col-auto">
+              <input type="number" id="bmiWeight" class="form-control" placeholder="kg">
+            </div>
+          </div>
+          <div class="row d-flex justify-content-center mt-2">
+            <div class="col-auto">
+              <button type="button" class="btn btn-outline-success mt-2" onclick="bmi()">CALCULATE</button>
+            </div>
+            <div class="col-auto">
+              <button type="button" class="btn btn-outline-secondary mt-2" onclick="bmiReset()">RESET</button>
+            </div>
+          </div>
         </div>
-    </div>
+        <div class="row bg-green mt-4 col-3 ms-1 p-3 " id="bmiResult" style="display: none;">
+          <div class="col-auto">
+            <h2 class="bmiResult font-titan">Result:<label id="bmiLab" class="ms-3"></label></h2>
+          </div>
+          <div class="col-auto">
+            <h3><label id="bmiLab2" class="color-red font-titan"></label></h3>
+          </div>
+        </div>
+      </div>
 
     <!-- BMR -->
     <div class="tab-pane fade" id="bmr" role="tabpanel" aria-labelledby="bmr-tab">
-      <div class="bmr">
+      <div class="row">
         <h1><span>BMR CALCULATOR</span></h1>
-        <div class="bmrBox">
-          <h5 class="bmrH5">Age &nbsp; <input type="number" name="" id="bmrInput1" name=""> &nbsp;ages 15 - 80</h4>
-          <h5 class="bmrH5">Gender &nbsp; <input type="radio" id="bmrRadio" name="fav_language" checked>Male &nbsp; <input type="radio" id="bmrRadio" name="fav_language">Female</h5>
-          <h5 class="bmrH5">Height &nbsp; <input type="number" id="bmrInput2" placeholder="cm"></h5>
-          <h5 class="bmrH5">Weight &nbsp; <input type="number" id="bmrInput3" placeholder="kg"></h5>
-          <button type="button" class="btn btn-outline-success" id="bmrCalculate" onclick="bmr()">CALCULATE</button>
-          <button type="button" class="btn btn-outline-secondary" id="bmrReset" onclick="bmrReset()">RESET</button>
-        </div>
       </div>
-      
+        <div class="bmrBox bg-light-grey mt-4 p-3 col-3">
+          <div class="row">
+            <div class="col-auto">
+              <label for="bmrAges" class="col-form-label">Ages:</label>
+            </div>
+            <div class="col-auto">
+              <input type="number" id="bmrAges" class="form-control" aria-describedby="passwordHelpInline">
+            </div>
+          </div>
+          <div class="row mt-3">
+            <div class="col-auto">
+              <label class="col-form-label">Gender:</label>
+            </div>
+            <div class="col-auto mt-2">
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="bmrRadio" id="bmrRadio1" value="option1" checked>
+                <label class="form-check-label" for="inlineRadio1">Male</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="bmrRadio" id="bmrRadio2" value="option2">
+                <label class="form-check-label" for="inlineRadio2">Female</label>
+              </div>
+            </div>
+          </div>
+          <div class="row mt-3">
+            <div class="col-auto">
+              <label for="bmrHeight" class="col-form-label">Height:</label>
+            </div>
+            <div class="col-auto">
+              <input type="number" id="bmrHeight" class="form-control" placeholder="cm">
+            </div>
+          </div>
+          <div class="row mt-3">
+            <div class="col-auto">
+              <label for="bmrWeight" class="col-form-label">Weight:</label>
+            </div>
+            <div class="col-auto">
+              <input type="number" id="bmrWeight" class="form-control" placeholder="kg">
+            </div>
+          </div>
+          <div class="row d-flex justify-content-center mt-2">
+            <div class="col-auto">
+              <button type="button" class="btn btn-outline-success mt-2" onclick="bmr()">CALCULATE</button>
+            </div>
+            <div class="col-auto">
+              <button type="button" class="btn btn-outline-secondary mt-2" onclick="bmrReset()">RESET</button>
+            </div>
+          </div>
+        </div>
+        <div class="row bg-green mt-4 col-3 ms-1 p-3 " id="bmrResult" style="display: none;">
+          <div class="col-auto">
+            <h2 class="font-titan">Result:<label id="bmrLab" class="ms-3"></label></h2>
+          </div>
+          <div class="col-auto">
+            <h2 class="color-red font-titan">Calories/day</h2>
+          </div>
+        </div>
     </div>
 
+    <!-- IDEAL WEIGHT -->
+    <div class="tab-pane fade" id="idealWeight" role="tabpanel" aria-labelledby="idealWeight-tab">
+      <div class="row">
+        <h1><span>IDEAL WEIGHT CALCULATOR</span></h1>
+      </div>
+      <div class="idealBox bg-light-grey mt-4 p-3 col-3">
+          
+            <div class="row">
+              <div class="col-auto">
+                <label for="idealAges" class="col-form-label">Ages:</label>
+              </div>
+              <div class="col-auto">
+                <input type="number" id="idealAges" class="form-control" aria-describedby="passwordHelpInline">
+              </div>
+            </div>
+            <div class="row mt-3">
+              <div class="col-auto">
+                <label class="col-form-label">Gender:</label>
+              </div>
+              <div class="col-auto mt-2">
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="idealWeightRadio" id="idealRadio1" value="option1" checked>
+                  <label class="form-check-label" for="inlineRadio1">Male</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="idealWeightRadio" id="idealRadio2" value="option2">
+                  <label class="form-check-label" for="inlineRadio2">Female</label>
+                </div>
+              </div>
+            </div>
+            <div class="row mt-3">
+              <div class="col-auto">
+                <label for="idealHeight" class="col-form-label">Height:</label>
+              </div>
+              <div class="col-auto">
+                <input type="number" id="idealHeight" class="form-control" placeholder="cm">
+              </div>
+              <div class="row d-flex justify-content-center mt-2">
+                <div class="col-auto">
+                  <button type="button" class="btn btn-outline-success mt-2" onclick="ideal()">CALCULATE</button>
+                </div>
+                <div class="col-auto">
+                  <button type="button" class="btn btn-outline-secondary mt-2" onclick="idealReset()">RESET</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row bg-green mt-4 col-3 ms-1 p-3 " id="idealResult" style="display: none;">
+            <div class="col-auto">
+              <h2 class="font-titan">Result:<label id="idealLab" class="ms-3"></label></h2>
+            </div>
+          </div>
+    </div>
+
+    <!-- BODY FAT -->
+    <div class="tab-pane fade" id="bodyFat" role="tabpanel" aria-labelledby="bodyFat-tab">
+      <div class="row">
+        <h1><span>BODY FAT CALCULATOR</span></h1>
+      </div>
+      <div class="bodyFatBox bg-light-grey mt-4 p-3 col-3">
+        <div class="row">
+          <div class="col-auto">
+            <label class="col-form-label">Gender:</label>
+          </div>
+          <div class="col-auto mt-2">
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" name="bodyFatRadio" onclick="bodyFatRadio1()" id="bodyFatRadio1" value="option1" checked>
+              <label class="form-check-label" for="bodyFatRadio1">Male</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" name="bodyFatRadio" id="bodyFatRadio2" value="option2" onclick="bodyFatRadio()">
+              <label class="form-check-label" for="bodyFatRadio2">Female</label>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-auto">
+            <label for="bodyFatAges" class="col-form-label">Ages:</label>
+          </div>
+          <div class="col-auto">
+            <input type="number" id="bodyFatAges" class="form-control ms-2">
+          </div>
+        </div>
+        <div class="row mt-3">
+          <div class="col-auto">
+            <label for="bodyFatWeight" class="col-form-label">Weight:</label>
+          </div>
+          <div class="col-auto">
+            <input type="number" id="bodyFatWeight" class="form-control" placeholder="kg">
+          </div>
+        </div>
+        <div class="row mt-3">
+          <div class="col-auto">
+            <label for="bodyFatHeight" class="col-form-label">Height:</label>
+          </div>
+          <div class="col-auto">
+            <input type="number" id="bodyFatHeight" class="form-control" placeholder="cm">
+          </div>
+        </div>
+        <div class="row mt-3">
+          <div class="col-auto">
+            <label for="bodyFatNeck" class="col-form-label">Neck:</label>
+          </div>
+          <div class="col-auto">
+            <input type="number" id="bodyFatNeck" class="form-control ms-2" placeholder="cm">
+          </div>
+        </div>
+        <div class="row mt-3">
+          <div class="col-auto">
+            <label for="bodyFatWaist" class="col-form-label">Waist:</label>
+          </div>
+          <div class="col-auto">
+            <input type="number" id="bodyFatWaist" class="form-control ms-2" placeholder="cm">
+          </div>
+        </div>
+        <div class="row mt-3">
+          <div class="col-auto">
+            <label for="bodyFatHip" class="col-form-label" style="display: none;" id="bodyFatHipRow">Hip:</label>
+          </div>
+          <div class="col-auto">
+            <input type="number" id="bodyFatHip" class="form-control ms-3" style="display: none;" placeholder="cm">
+          </div>
+        </div>
+        <div class="row d-flex justify-content-center mt-2">
+          <div class="col-auto">
+            <button type="button" class="btn btn-outline-success mt-2" onclick="bodyFat()">CALCULATE</button>
+          </div>
+          <div class="col-auto">
+            <button type="button" class="btn btn-outline-secondary mt-2" onclick="bodyFatReset()">RESET</button>
+          </div>
+        </div>
+      </div>
+      <div class="row bg-green mt-4 col-3 ms-1 p-3 " id="bodyFatResult" style="display: none;">
+        <div class="col-auto">
+          <h2 class="font-titan">Result:<label id="bodyFatLab" class="ms-3"></label></h2>
+        </div>
+      </div>
+    </div>
+
+    <!-- RENT -->
+    <div class="tab-pane fade" id="rent" role="tabpanel" aria-labelledby="rent-tab">
+      <div class="row">
+        <h1><span>RENT CALCULATOR</span></h1>
+      </div>
+      <div class="rentBox bg-light-grey mt-4 p-3 col-3">
+      <div class="row">
+          
+        </div>
+      </div>
+    </div>
+  
     <!--  -->
   </div>
+
+  
       
-      
- 
+
 
 
 
