@@ -60,30 +60,48 @@
           </div>
         </div>
       </nav>
+
       <div class="container-fluid">
+        
       <div class="tab-content ms-5 mt-4" id="myTabContent">
-
-
         <!--TRIANGLE-->
         <div class="tab-pane fade" id="triangle" role="tabpanel" aria-labelledby="triangle-tab">
-          <div class="tr">
+          <div class="row">
             <h1><span>TRIANGLE CALCULATOR</span></h1>
-            <div class="holder position-relative mt-4">
-            <img src="images/triangle.jpg" class="img-fluid w-25">
-        <form action="">
-            <input type="number" class="side-a form-control position-absolute" placeholder="SIDE A" id="triangle1">
-            <input type="number" class="side-b form-control position-absolute" placeholder="SIDE B" id="triangle2">
-            <input type="number" class="side-c form-control position-absolute" placeholder="SIDE C" id="triangle3">
-            <input type="number" class="input4 form-control position-absolute" placeholder="HEIGHT" id="triangle4">
           </div>
-            <button type="button" class="btn btn-outline-success" onclick="triangle()" id="triangleButton">CALCULATE</button>
-            
-            <div class="mb-3">
-              <label for="agesTriangle" class="form-label">Ages</label>
-              <input type="number" class="form-control" id="agesTriangle">
+
+          <div class="card position-relative" style="width: 25rem;">
+            <img class="card-img-top" src="images/triangle.jpg">
+            <input type="text" class="form-control position-absolute side-a" id="sideA" placeholder="SIDE A">
+            <input type="text" class="form-control position-absolute side-b" id="sideB" placeholder="SIDE B">
+            <input type="text" class="form-control position-absolute side-c" id="sideC" placeholder="SIDE C">
+            <input type="text" class="form-control position-absolute triangle-height" id="triangleHeight" placeholder="HEIGHT">
+            <div class="card-body">
+              <div class="row mt-3 d-flex justify-content-center">
+                <div class="col-auto">
+                  <button type="button" class="btn btn-outline-success mt-2" onclick="triangle()">CALCULATE</button>
+                </div>
+                <div class="col-auto">
+                  <button type="button" class="btn btn-outline-secondary mt-2" onclick="triangleReset()">RESET</button>
+                </div>
+              </div>
             </div>
-            <h4 class="trianglePreimeter">THE AREA IS: <input type="number" id="triangleA" disabled class="triangleInput"></h4>
-        </form>
+          </div>
+          <div class="row mt-3">
+            <div class="col-auto">
+              <label for="triangleP" class="col-form-label">PERIMETER:</label>
+            </div>
+            <div class="col-auto">
+              <input type="number" id="triangleP" class="form-control ms-auto" disabled>
+            </div>
+          </div>
+          <div class="row mt-2">
+            <div class="col-auto">
+              <label for="triangleA" class="col-form-label">AREA:&nbsp;&nbsp;&nbsp;</label>
+            </div>
+            <div class="col-auto">
+              <input type="number" id="triangleA" class="form-control ms-3" disabled>
+            </div>
           </div>
         </div>
 
@@ -91,18 +109,46 @@
 
         <!--CIRCLE-->
         <div class="tab-pane fade" id="circle" role="tabpanel" aria-labelledby="circle-tab">
-          <div class="cr">
+
+          <div class="row">
             <h1><span>CIRCLE CALCULATOR</span></h1>
-            <img src="images/circle.jpg" class="circleImg">
-
-            <input type="number" class="radiusInput" placeholder="RADIUS" id="radius">
-
-            
           </div>
-          <button type="button" class="btn btn-outline-success" onclick="circle()" id="circleButton">CALCULATE</button>
-          <h4 class="circlePreimeter">THE PERIMETER IS: <input type="number" id="circleP" disabled class="circleInput"></h4>
-            <h4 class="circlePreimeter"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  THE AREA IS: <input type="number" id="circleA" disabled class="circleInput"></h4>
+
+          <div class="card position-relative" style="width: 25rem;">
+            <img class="card-img-top" src="images/circle.jpg">
+            <input type="text" class="form-control position-absolute radius" id="radius" placeholder="RADIUS">
+            <div class="card-body">
+              <div class="row mt-3 d-flex justify-content-center">
+                <div class="col-auto">
+                  <button type="button" class="btn btn-outline-success mt-2" onclick="circle()">CALCULATE</button>
+                </div>
+                <div class="col-auto">
+                  <button type="button" class="btn btn-outline-secondary mt-2" onclick="circleReset()">RESET</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row mt-3">
+            <div class="col-auto">
+              <label for="circleP" class="col-form-label">PERIMETER:</label>
+            </div>
+            <div class="col-auto">
+              <input type="number" id="circleP" class="form-control ms-auto" disabled>
+            </div>
+          </div>
+          <div class="row mt-2">
+            <div class="col-auto">
+              <label for="circleA" class="col-form-label">AREA:&nbsp;&nbsp;&nbsp;</label>
+            </div>
+            <div class="col-auto">
+              <input type="number" id="circleA" class="form-control ms-3" disabled>
+            </div>
+          </div>
+
         </div>
+            
+        
 
         <!--PRECENTAGE-->
 
@@ -175,10 +221,10 @@
       <div class="row">
         <h1><span>BMI CALCULATOR</span></h1>
       </div>
-        <div class="bmiBox bg-light-grey mt-4 p-3 col-3">
+        <div class="bmiBox bg-light-grey mt-4 p-3 col-lg-3 col-md-3">
           <div class="row">
             <div class="col-auto">
-              <label for="bmiAges" class="col-form-label">Ages:</label>
+              <label for="bmiAges" class="col-form-label">&nbsp; Ages:</label>
             </div>
             <div class="col-auto">
               <input type="number" id="bmiAges" class="form-control" aria-describedby="passwordHelpInline">
@@ -215,7 +261,7 @@
               <input type="number" id="bmiWeight" class="form-control" placeholder="kg">
             </div>
           </div>
-          <div class="row d-flex justify-content-center mt-2">
+          <div class="row d-flex justify-content-start mt-2 ms-4">
             <div class="col-auto">
               <button type="button" class="btn btn-outline-success mt-2" onclick="bmi()">CALCULATE</button>
             </div>
@@ -224,7 +270,7 @@
             </div>
           </div>
         </div>
-        <div class="row bg-green mt-4 col-3 ms-1 p-3 " id="bmiResult" style="display: none;">
+        <div class="row bg-green mt-4 col-lg-3 ms-1 p-3 " id="bmiResult" style="display: none;">
           <div class="col-auto">
             <h2 class="bmiResult font-titan">Result:<label id="bmiLab" class="ms-3"></label></h2>
           </div>
@@ -239,10 +285,10 @@
       <div class="row">
         <h1><span>BMR CALCULATOR</span></h1>
       </div>
-        <div class="bmrBox bg-light-grey mt-4 p-3 col-3">
+        <div class="bmrBox bg-light-grey mt-4 p-3 col-lg-3">
           <div class="row">
             <div class="col-auto">
-              <label for="bmrAges" class="col-form-label">Ages:</label>
+              <label for="bmrAges" class="col-form-label">&nbsp; Ages:</label>
             </div>
             <div class="col-auto">
               <input type="number" id="bmrAges" class="form-control" aria-describedby="passwordHelpInline">
@@ -288,7 +334,7 @@
             </div>
           </div>
         </div>
-        <div class="row bg-green mt-4 col-3 ms-1 p-3 " id="bmrResult" style="display: none;">
+        <div class="row bg-green mt-4 col-lg-3 ms-1 p-3 " id="bmrResult" style="display: none;">
           <div class="col-auto">
             <h2 class="font-titan">Result:<label id="bmrLab" class="ms-3"></label></h2>
           </div>
@@ -303,11 +349,11 @@
       <div class="row">
         <h1><span>IDEAL WEIGHT CALCULATOR</span></h1>
       </div>
-      <div class="idealBox bg-light-grey mt-4 p-3 col-3">
+      <div class="idealBox bg-light-grey mt-4 p-3 col-lg-3">
           
             <div class="row">
               <div class="col-auto">
-                <label for="idealAges" class="col-form-label">Ages:</label>
+                <label for="idealAges" class="col-form-label">&nbsp; Ages:</label>
               </div>
               <div class="col-auto">
                 <input type="number" id="idealAges" class="form-control" aria-describedby="passwordHelpInline">
@@ -345,7 +391,7 @@
               </div>
             </div>
           </div>
-          <div class="row bg-green mt-4 col-3 ms-1 p-3 " id="idealResult" style="display: none;">
+          <div class="row bg-green mt-4 col-lg-3 ms-1 p-3 " id="idealResult" style="display: none;">
             <div class="col-auto">
               <h2 class="font-titan">Result:<label id="idealLab" class="ms-3"></label></h2>
             </div>
@@ -357,7 +403,7 @@
       <div class="row">
         <h1><span>BODY FAT CALCULATOR</span></h1>
       </div>
-      <div class="bodyFatBox bg-light-grey mt-4 p-3 col-3">
+      <div class="bodyFatBox bg-light-grey mt-4 p-3 col-lg-3">
         <div class="row">
           <div class="col-auto">
             <label class="col-form-label">Gender:</label>
@@ -375,10 +421,10 @@
         </div>
         <div class="row">
           <div class="col-auto">
-            <label for="bodyFatAges" class="col-form-label">Ages:</label>
+            <label for="bodyFatAges" class="col-form-label">&nbsp;&nbsp; Ages:</label>
           </div>
           <div class="col-auto">
-            <input type="number" id="bodyFatAges" class="form-control ms-2">
+            <input type="number" id="bodyFatAges" class="form-control">
           </div>
         </div>
         <div class="row mt-3">
@@ -430,7 +476,7 @@
           </div>
         </div>
       </div>
-      <div class="row bg-green mt-4 col-3 ms-1 p-3 " id="bodyFatResult" style="display: none;">
+      <div class="row bg-green mt-4 col-lg-3 ms-1 p-3 " id="bodyFatResult" style="display: none;">
         <div class="col-auto">
           <h2 class="font-titan">Result:<label id="bodyFatLab" class="ms-3"></label></h2>
         </div>
@@ -442,22 +488,117 @@
       <div class="row">
         <h1><span>RENT CALCULATOR</span></h1>
       </div>
-      <div class="rentBox bg-light-grey mt-4 p-3 col-3">
+      <div class="rentBox bg-light-grey mt-4 p-3 col-lg-6">
       <div class="row">
-            <div class="col-auto">
-              
+        <div class="col-auto">
+          <label for="rentInput1" class="col-form-label">You Annual Pre-Tax Income &nbsp;&nbsp;</label>
+        </div>
+        <div class="col-auto">
+          <input type="number" id="rentInput1" class="form-control" placeholder="$">
+        </div>
+        <div class="col-auto">
+          <label class="col-form-label">/Year</label>
+        </div>
+        </div>
+        <div class="row mt-3">
+          <div class="col-auto">
+            <label for="rentInput2" class="col-form-label">Your Monthly Recurring Debt</label>
+          </div>
+          <div class="col-auto">
+            <input type="number" id="rentInput2" class="form-control" placeholder="$">
+          </div>
+          <div class="col-auto">
+            <label class="col-form-label">Car/Student Loan, Credit Cards</label>
+          </div>
+        </div>
+            <div class="row d-flex justify-content-center mt-2 me-5">
+              <div class="col-auto">
+                <button type="button" class="btn btn-outline-success mt-2" onclick="rent()">CALCULATE</button>
+              </div>
+              <div class="col-auto">
+                <button type="button" class="btn btn-outline-secondary mt-2" onclick="rentReset()">RESET</button>
+              </div>
             </div>
+      </div>
+      <div class="row bg-green mt-4 col-lg-6 ms-1 p-3 " id="rentResult" style="display: none;">
+        <div class="col-auto">
+          <h2 class="font-titan">Result:<label id="rentLab" class="ms-3"></label></h2>
+        </div>
+      </div>
+    </div>
+
+    <!-- AUTO LEASE -->
+    <div class="tab-pane fade" id="lease" role="tabpanel" aria-labelledby="lease-tab">
+      <div class="row">
+        <h1><span>AUTO LEASE CALCULATOR</span></h1>
+      </div>
+      <div class="leaseBox bg-light-grey mt-4 p-3 col-lg-4">
+        <div class="row">
+          <div class="col-auto">
+            <label for="leasePrice" class="col-form-label">Auto Price:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+          </div>
+          <div class="col-auto">
+            <input type="number" id="leasePrice" class="form-control  ms-auto" placeholder="$">
+          </div>
+        </div>
+        <div class="row mt-2">
+          <div class="col-auto">
+            <label for="leaseTerm" class="col-form-label">Lease Term:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+          </div>          
+          <div class="col-auto">
+            <input type="number" id="leaseTerm" class="form-control ms-auto" placeholder="months">
+          </div>
+        </div>
+        <div class="row mt-2">
+          <div class="col-auto">
+            <label for="leasePayment" class="col-form-label">Down Payment:</label>
+          </div>         
+          <div class="col-auto">
+            <input type="number" id="leasePayment" class="form-control ms-auto" placeholder="$">
+          </div>
+        </div>
+        <div class="row mt-2">
+          <div class="col-auto">
+            <label for="leaseTrade" class="col-form-label">Trade-in Value :</label>
+          </div>         
+          <div class="col-auto">
+            <input type="number" id="leaseTrade" class="form-control ms-auto" placeholder="$">
+          </div>
+        </div>
+        <div class="row mt-2">
+          <div class="col-auto">
+            <label for="leaseTax" class="col-form-label">Sales Tax :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+          </div>         
+          <div class="col-auto">
+            <input type="number" id="leaseTax" class="form-control ms-auto" placeholder="%">
+          </div>
+        </div>
+        <div class="row mt-2">
+          <div class="col-auto">
+            <label for="leaseResidual" class="col-form-label">Residual Value:</label>
+          </div>
+          <div class="col-auto">
+            <input type="number" id="leaseResidual" class="form-control ms-auto" placeholder="%">
+          </div>
+        </div>
+        <div class="row d-flex justify-content-center mt-2">
+          <div class="col-auto">
+            <button type="button" class="btn btn-outline-success mt-2" onclick="lease()">CALCULATE</button>
+          </div>
+          <div class="col-auto">
+            <button type="button" class="btn btn-outline-secondary mt-2" onclick="leaseReset()">RESET</button>
+          </div>
+        </div>
+      </div>
+      <div class="row bg-green mt-4 col-lg-6 ms-1 p-3 " id="leaseResult" style="display: none;">
+        <div class="col-auto">
+          <h2 class="font-titan">Result:<label id="leaseLab" class="ms-3"></label></h2>
         </div>
       </div>
     </div>
   
     <!--  -->
   </div>
-
-  
-      
-
-
 
 
   </body>

@@ -9,7 +9,7 @@ input::-webkit-inner-spin-button {
 
 .nav-link {
   border-radius: 15px;
-}
+} 
 
 .nav-link:hover {
   background-color: #1ce612;
@@ -18,10 +18,39 @@ input::-webkit-inner-spin-button {
 .collapse {
     margin-right: 90px;
 }
+
+/* TRIANGLE */
+
 .side-a{
-    left: 2%;
-    top: 50%;
+    left: 9%;
+    top: 40%;
     width: 100px!important;
+}
+
+.side-b{
+   left: 65%;
+   top: 40%;
+   width: 100px!important;
+}
+
+.side-c{
+  left: 39%;
+  top: 73%;
+  width: 100px!important;
+}
+
+.triangle-height {
+  left: 37%;
+  top: 52%;
+  width: 100px!important;
+}
+
+/* CIRCLE */
+
+.radius {
+  left: 60%;
+  top: 31%;
+  width: 100px!important;
 }
 
 /* FONT FAMILY */

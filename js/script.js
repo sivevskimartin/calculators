@@ -1,11 +1,20 @@
 function triangle() {
-    var a = document.getElementById('triangle1').value;
-    var b = document.getElementById('triangle2').value;
-    var c = document.getElementById('triangle3').value;
-    var d = document.getElementById('triangle4').value;
+    var sideA = document.getElementById('sideA').value;
+    var sideB = document.getElementById('sideB').value;
+    var sideC = document.getElementById('sideC').value;
+    var height = document.getElementById('triangleHeight').value;
 
-    document.getElementById('triangleP').value = parseFloat(a)+parseFloat(b)+parseFloat(c); 
-    document.getElementById('triangleA').value = parseFloat(a)*parseFloat(d)/2; 
+    document.getElementById('triangleP').value = parseFloat(sideA)+parseFloat(sideB)+parseFloat(sideC); 
+    document.getElementById('triangleA').value = parseFloat(sideA)*parseFloat(height)/2; 
+}
+
+function triangleReset() {
+    document.getElementById('sideA').value = "";
+    document.getElementById('sideB').value = "";
+    document.getElementById('sideC').value = "";
+    document.getElementById('triangleHeight').value = "";
+    document.getElementById('triangleP').value = "";
+    document.getElementById('triangleA').value = "";
 }
 
 function circle() {
@@ -13,6 +22,12 @@ function circle() {
 
     document.getElementById('circleP').value = (2*parseFloat(r)*Math.PI).toFixed(6);
     document.getElementById('circleA').value = (Math.pow(parseFloat(r), 2)*Math.PI).toFixed(5);
+}
+
+function circleReset() {
+    document.getElementById('radius').value = "";
+    document.getElementById('circleP').value = "";
+    document.getElementById('circleA').value = "";
 }
 
 function precentage() {
@@ -163,4 +178,40 @@ function bodyFatReset() {
     document.getElementById('bodyFatWaist').value = "";
     document.getElementById('bodyFatHip').value = "";
     document.getElementById('bodyFatResult').style.display = "none";
+}
+
+function rent() {
+    var rentTax = document.getElementById('rentInput1').value;
+    var rentDebt = document.getElementById('rentInput2').value;
+    var res;
+    document.getElementById('rentLab').innerHTML = res;
+    document.getElementById('rentResult').style.display="block";
+}
+
+function rentReset() {
+    document.getElementById('rentInput1').value = "";
+    document.getElementById('rentInput2').value = "";
+    document.getElementById('rentResult').style.display = "none";
+}
+
+function lease() {
+    var price = document.getElementById('leasePrice').value;
+    var term = document.getElementById('leaseTerm').value;
+    var payment = document.getElementById('leasePayment').value;
+    var trade = document.getElementById('leaseTrade').value;
+    var tax = document.getElementById('leaseTax').value;
+    var res;
+    document.getElementById('leaseLab').innerHTML = res;
+    document.getElementById('leaseResult').style.display="block";
+}
+
+
+function leaseReset() {
+    document.getElementById('leasePrice').value = "";
+    document.getElementById('leaseTerm').value = "";
+    document.getElementById('leasePayment').value = "";
+    document.getElementById('leaseTrade').value = "";
+    document.getElementById('bodyFatWaist').value = "";
+    document.getElementById('leaseTax').value = "";
+    document.getElementById('leaseResult').style.display = "none";
 }
