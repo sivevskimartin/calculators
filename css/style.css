@@ -49,7 +49,7 @@ input::-webkit-inner-spin-button {
 
 .radius {
   left: 60%;
-  top: 31%;
+  top: 30%;
   width: 100px!important;
 }
 
@@ -72,6 +72,7 @@ input::-webkit-inner-spin-button {
 .color-red {
   color: red;
 }
+
 
 /* ANIMATION */
 
